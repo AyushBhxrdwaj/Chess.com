@@ -1,0 +1,32 @@
+{
+  "name": "chesscom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node app.js",
+    "build:css": "npx @tailwindcss/cli -i ./public/css/input.css -o ./public/css/output.css",
+    "watch:css": "npx @tailwindcss/cli -i ./public/css/input.css -o ./public/css/output.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AyushBhxrdwaj/Chess.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AyushBhxrdwaj/Chess.com/issues"
+  },
+  "homepage": "https://github.com/AyushBhxrdwaj/Chess.com#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.12",
+    "chess.js": "^1.4.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "socket.io": "^4.8.1",
+    "tailwindcss": "^4.1.12"
+  }
+}

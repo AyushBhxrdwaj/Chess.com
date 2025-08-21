@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@layer components {
+  /* Make the board an 8x8 grid that fills its container */
+  .chessboard {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-rows: repeat(8, minmax(0, 1fr));
+  }
+
+  .square {
+    position: relative;
+    /* keep squares perfect using aspect-ratio as a fallback if container resizes */
+    aspect-ratio: 1 / 1;
+  }
+
+  .square.light {
+    background-color: #f0d9b5;
+  }
+  .square.dark {
+    background-color: #b58863;
+  }
+
+  .piece {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem; /* Increased size for better visibility */
+    user-select: none;
+    width: 100%;
+    height: 100%;
+    /* Specify fonts that render chess pieces as monochrome characters */
+    font-family: "Segoe UI Symbol", "Symbola", "Arial Unicode MS", sans-serif;
+  }
+
+  .piece.white {
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+
+  .piece.black {
+    color: black;
+  }
+}
