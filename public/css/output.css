@@ -237,10 +237,63 @@
   }
   .piece.white {
     color: white;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -1px 0 0 #000, 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.8));
   }
   .piece.black {
     color: black;
+  }
+  .chessboard.flipped {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+  .chessboard.flipped .piece {
+    transform: rotate( 180deg );
+  }
+  .game-status {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in;
+  }
+  .status-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .status-content h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  .game-status.checkmate .status-content {
+    background: #dc2626;
+    color: white;
+  }
+  .game-status.stalemate .status-content {
+    background: #6b7280;
+    color: white;
+  }
+  .game-status.check .status-content {
+    background: #f59e0b;
+    color: white;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 }
 @property --tw-font-weight {
